@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Home - Trader WorkStation{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div id="hero" class="hero-content">
+        <h1>Welcome to Trader WorkStation</h1>
+        <p>Your ultimate platform for stock market trading and investments.</p>
+        <a href="#portfolio" class="btn btn-primary">Explore Portfolio</a>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2>Our Portfolio</h2>
+        <p>Explore some of the best-performing stocks and investments curated for you.</p>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <h3>Apple Inc. (AAPL)</h3>
+                <p>Technology giant delivering consistent returns for investors.</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="portfolio-item">
+                <h3>Amazon.com (AMZN)</h3>
+                <p>Leading e-commerce platform with exponential growth potential.</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+            <div class="portfolio-item">
+                <h3>Tesla Inc. (TSLA)</h3>
+                <p>Innovative electric vehicle manufacturer with a promising future.</p>
+                <a href="#" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- News Section -->
+<section id="news" class="news">
+    <div class="container">
+        <h2>Latest Market News</h2>
+        <p>Stay informed with the latest developments in the financial markets.</p>
+        <div class="news-grid">
+            <div class="news-item">
+                <h3>Stock Market Hits Record High</h3>
+                <p>The S&P 500 reached an all-time high today, driven by strong earnings reports.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="news-item">
+                <h3>Federal Reserve Announces Interest Rate Decision</h3>
+                <p>The Fed announced its decision to keep interest rates steady amid inflation concerns.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="news-item">
+                <h3>Tech Stocks Lead the Rally</h3>
+                <p>Major tech companies saw significant gains, boosting the overall market performance.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Blog Section -->
+<section id="blog" class="blog">
+    <div class="container">
+        <h2>Our Blog</h2>
+        <p>Gain insights, tips, and strategies from our latest blog posts.</p>
+        <div class="blog-grid">
+            <div class="blog-item">
+                <h3>Understanding Stock Market Basics</h3>
+                <p>Learn the fundamentals of the stock market and how to get started as a trader or investor.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="blog-item">
+                <h3>Top 5 Strategies for Day Trading</h3>
+                <p>Discover the best strategies for making quick decisions and maximizing profits in day trading.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="blog-item">
+                <h3>How to Build a Diversified Portfolio</h3>
+                <p>Find out why diversification is essential and how to build a balanced investment portfolio.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="features">
+    <div class="container">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>Real-Time Trading</h3>
+                <p>Access live trading data to make well-informed decisions.</p>
+                <span class="coming-soon">Coming Soon</span> <!-- Added Coming Soon -->
+            </div>
+            <div class="feature-item">
+                <h3>Market News</h3>
+                <p>Stay updated with the latest developments in the stock market.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Expert Insights</h3>
+                <p>Learn strategies and techniques from industry experts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="youtube-live">
+    <div class="container">
+        <h2>Live Trading Stream</h2>
+        <p>Join our live trading sessions and learn trading strategies in real-time.</p>
+        <div class="video-container">
+            <!-- Replace YOUR_YOUTUBE_LIVE_EMBED_URL with the actual embed URL -->
+            <iframe
+                src="https://www.youtube.com/embed/YOUR_YOUTUBE_LIVE_EMBED_URL"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+<section class="cta">
+    <div class="cta-content">
+        <h2>Get Started with Trader WorkStation</h2>
+        <p>Join our platform and take control of your financial future.</p>
+        <a href="{% url 'contact' %}" class="btn btn-secondary">Contact Us</a>
+    </div>
+</section>
+{% endblock %}
