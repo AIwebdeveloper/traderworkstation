@@ -16,11 +16,13 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
+                <li><a href="{% url 'home' %}#news">News</a></li>
+                <li><a href="{% url 'home' %}#blog">Blog</a></li>
+                <li><a href="{% url 'chat_forum' %}">Chat Forum</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </nav>        
     </header>
@@ -41,7 +43,32 @@
                 <li><a href="#">Twitter</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
+            <p>
+                <a href="{% url 'chat_forum' %}">Visit Chat Forum</a> | 
+                <a href="{% url 'contact' %}">Contact Us</a>
+            </p>
         </div>
     </footer>
+<!-- TWS Assistant Chat Button and Chat Area -->
+<div class="tws-assistant">
+    <button id="tws-chat-btn">TWS Assistant</button>
+</div>
+
+<div id="chat-area" class="chat-area hidden">
+    <div class="chat-header">
+        <h3>TWS Assistant</h3>
+        <button id="close-chat-btn">&times;</button>
+    </div>
+    <div class="chat-messages">
+        <div class="message bot-message">Hello! How can I assist you with trading or investments?</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Type your message..." />
+        <button id="send-chat-btn">Send</button>
+    </div>
+</div>
+
+    <!-- Include JavaScript for TWS Assistant -->
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>

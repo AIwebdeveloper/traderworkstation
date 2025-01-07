@@ -1,15 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block title %}Home - Trader WorkStation{% endblock %}
 
 {% block content %}
 <section class="hero">
-    <div id="hero" class="hero-content">
+    <div class="hero-overlay">
         <h1>Welcome to Trader WorkStation</h1>
         <p>Your ultimate platform for stock market trading and investments.</p>
-        <a href="#portfolio" class="btn btn-primary">Explore Portfolio</a>
+        <a href="#portfolio" class="btn">Explore Portfolio</a>
+    </div>
+</section>
+
+<!-- YouTube Live Stream Section -->
+<section class="youtube-live">
+    <div class="container">
+        <h2>Live Trading Stream</h2>
+        <p>Join our live trading sessions and learn trading strategies in real-time.</p>
+        <div class="video-container">
+            <iframe
+                src="https://www.youtube.com/embed/YOUR_YOUTUBE_LIVE_EMBED_URL"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </section>
 
@@ -63,7 +78,6 @@
     </div>
 </section>
 
-
 <!-- Blog Section -->
 <section id="blog" class="blog">
     <div class="container">
@@ -89,9 +103,6 @@
     </div>
 </section>
 
-
-
-
 <section class="features">
     <div class="container">
         <h2>Why Choose Us?</h2>
@@ -99,7 +110,7 @@
             <div class="feature-item">
                 <h3>Real-Time Trading</h3>
                 <p>Access live trading data to make well-informed decisions.</p>
-                <span class="coming-soon">Coming Soon</span> <!-- Added Coming Soon -->
+                <span class="coming-soon">Coming Soon</span>
             </div>
             <div class="feature-item">
                 <h3>Market News</h3>
@@ -113,28 +124,11 @@
     </div>
 </section>
 
-<section class="youtube-live">
-    <div class="container">
-        <h2>Live Trading Stream</h2>
-        <p>Join our live trading sessions and learn trading strategies in real-time.</p>
-        <div class="video-container">
-            <!-- Replace YOUR_YOUTUBE_LIVE_EMBED_URL with the actual embed URL -->
-            <iframe
-                src="https://www.youtube.com/embed/YOUR_YOUTUBE_LIVE_EMBED_URL"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-        </div>
-    </div>
-</section>
-
-
 <section class="cta">
     <div class="cta-content">
-        <h2>Get Started with Trader WorkStation</h2>
-        <p>Join our platform and take control of your financial future.</p>
-        <a href="{% url 'contact' %}" class="btn btn-secondary">Contact Us</a>
+        <h2>Join the Discussion</h2>
+        <p>Connect with other traders and discuss stock market trends in our chat forum.</p>
+        <a href="{% url 'chat_forum' %}" class="btn btn-primary">Visit Chat Forum</a>
     </div>
 </section>
 {% endblock %}
