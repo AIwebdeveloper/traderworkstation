@@ -114,8 +114,146 @@ footer .social-links li a:hover {
     text-decoration: underline;
 }
 
+
+/* Modals Styling (Sign In & Sign Up) */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.auth-form .form-group {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.auth-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.auth-text {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.auth-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-text a:hover {
+    text-decoration: underline;
+}
+
+/* Sign In/Sign Up Buttons Styling */
+.auth-links {
+    margin-left: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.auth-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: #ffdc73;
+}
+
+/* Media Queries for Modals */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .auth-form label,
+    .auth-form input,
+    .auth-button {
+        font-size: 0.9rem;
+    }
+}
+
+
 /* Homepage Styles */
-/* home page */
 .hero {
     position: relative;
     width: 100%;
@@ -943,32 +1081,50 @@ footer .social-links li a:hover {
 
 
 
-/* TWS Assistant Button */
+/* TWS Assistant Button Styling */
+/* TWS Assistant Button Container */
 .tws-assistant {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
+    bottom: 20px; /* Adjust placement */
+    right: 20px;  /* Adjust placement */
+    z-index: 1000; /* Keeps the button on top */
+    background: transparent; /* No background so no extra white space */
+  }
 
-#tws-chat-btn {
-    background-color: #007bff;
-    color: white;
-    padding: 15px 20px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 50px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
+  /* Circular button */
+  #tws-chat-btn {
+    width: 70px;     /* Circular button width */
+    height: 70px;    /* Circular button height */
+    border: none;    /* Removes default border */
+    background: none;/* No default background */
+    outline: none;   /* Remove focus outline */
+    padding: 0;      /* Remove extra padding */
+    border-radius: 50%; /* Makes it a circle */
+    overflow: hidden;   /* Keeps the image in the circle */
+    cursor: pointer;    /* Pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-#tws-chat-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.1);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
+  /* Remove focus outline again just to be safe */
+  #tws-chat-btn:focus {
+    outline: none;
+  }
+
+  /* The image itself */
+  .tws-assistant-image {
+    width: 100%;       /* Fills the button horizontally */
+    height: 100%;      /* Fills the button vertically */
+    border: none;      /* No image border */
+    margin: 0;         /* No default margin */
+    padding: 0;        /* No default padding */
+    object-fit: cover; /* Ensures the image fills the circle */
+    display: block;    /* Removes inline gaps around images */
+    border-radius: 50%;/* Ensures the image is also circular */
+    background: none;  /* No background color */
+  }
 
 /* Chat Area */
 .chat-area {

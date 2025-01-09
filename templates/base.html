@@ -24,10 +24,15 @@
                 <li><a href="{% url 'chat_forum' %}">Chat Forum</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
-        </nav>        
+        </nav>
+        <!-- Sign-In and Sign-Up Links -->
+        <div class="auth-links">
+            <a href="#" id="open-signin-modal">Sign In</a>
+            <a href="#" id="open-signup-modal">Sign Up</a>
+        </div>
     </header>
     
-
+    
     <!-- Main Content -->
     <main>
         {% block content %}
@@ -49,18 +54,22 @@
             </p>
         </div>
     </footer>
-<!-- TWS Assistant Chat Button and Chat Area -->
+
+<!-- TWS Assistant Button -->
 <div class="tws-assistant">
-    <button id="tws-chat-btn">TWS Assistant</button>
+    <button id="tws-chat-btn" class="tws-button">
+        <img src="{% static 'images/tws-assistant.jpg' %}" alt="TWS Assistant" class="tws-assistant-image">
+    </button>
 </div>
 
+<!-- Chat Area -->
 <div id="chat-area" class="chat-area hidden">
     <div class="chat-header">
         <h3>TWS Assistant</h3>
         <button id="close-chat-btn">&times;</button>
     </div>
     <div class="chat-messages">
-        <div class="message bot-message">Hello! How can I assist you with trading or investments?</div>
+        <div class="message bot-message">Hello! How can I assist you?</div>
     </div>
     <div class="chat-input-area">
         <input type="text" id="chat-input" placeholder="Type your message..." />
@@ -68,7 +77,64 @@
     </div>
 </div>
 
-    <!-- Include JavaScript for TWS Assistant -->
+
+    <!-- Modals for Sign-In and Sign-Up -->
+    <div id="auth-modals">
+        <!-- Sign-In Modal -->
+        <div id="signin-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-signin-modal">&times;</span>
+                <h2>Sign In</h2>
+                <form action="#" method="post" class="auth-form">
+                    <div class="form-group">
+                        <label for="signin-email">Email</label>
+                        <input type="email" id="signin-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password">Password</label>
+                        <input type="password" id="signin-password" name="password" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Sign In</button>
+                    <p class="auth-text">
+                        Don't have an account? <a href="#" id="switch-to-signup">Sign Up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sign-Up Modal -->
+        <div id="signup-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="close-signup-modal">&times;</span>
+                <h2>Sign Up</h2>
+                <form action="#" method="post" class="auth-form">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password-confirm">Confirm Password</label>
+                        <input type="password" id="signup-password-confirm" name="password_confirmation" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                    <p class="auth-text">
+                        Already have an account? <a href="#" id="switch-to-signin">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript -->
     <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
 </body>
 </html>
