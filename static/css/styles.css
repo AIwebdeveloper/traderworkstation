@@ -221,22 +221,24 @@ footer .social-links li a:hover {
 }
 
 /* Sign In/Sign Up Buttons Styling */
+/* Position the auth-links below the navigation */
 .auth-links {
-    margin-left: 15px;
-    display: flex;
-    gap: 15px;
+    margin-top: 10px; /* Adds spacing between the nav and auth-links */
+    text-align: right; /* Aligns the links to the right */
 }
 
 .auth-links a {
-    color: #fff;
+    color: #fff; /* Matches navigation link color */
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-left: 15px; /* Adds space between Sign In and Sign Up */
     transition: color 0.3s ease;
 }
 
 .auth-links a:hover {
-    color: #ffdc73;
+    color: #ffdc73; /* Matches hover color for navigation links */
 }
+
 
 /* Media Queries for Modals */
 @media (max-width: 768px) {
