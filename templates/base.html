@@ -27,29 +27,28 @@
                     <li><a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </nav>
-            <!-- Auth Links Section -->
-            <div class="auth-links-container">
-                <a href="#" id="open-signin-modal">Sign In</a>
-                <a href="#" id="open-signup-modal">Sign Up</a>
-            </div>
-        <!-- Updated Cart Section -->
-        <div class="cart-container">
-            <button id="cart-toggle-btn">
-                <i class="fas fa-shopping-cart"></i> <!-- Font Awesome Cart Icon -->
-                <span id="cart-count">(0)</span>
-            </button>
-            <div id="cart-content">
-                <h3>Shopping Cart</h3>
-                <div id="cart-items">
-                    <p>Your cart is empty.</p>
+            <div class="auth-links-and-cart">
+                <div class="auth-links-container">
+                    <a href="#" id="open-signin-modal">Sign In</a>
+                    <a href="#" id="open-signup-modal">Sign Up</a>
                 </div>
-                <div id="cart-footer">
-                    <button id="view-cart-btn">View Cart</button>
-                    <button id="checkout-btn">Checkout</button>
+                <div class="cart-container">
+                    <button id="cart-toggle-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count">(0)</span>
+                    </button>
+                    <div id="cart-content">
+                        <h3>Shopping Cart</h3>
+                        <div id="cart-items">
+                            <p>Your cart is empty.</p>
+                        </div>
+                        <div id="cart-footer">
+                            <button id="view-cart-btn">View Cart</button>
+                            <button id="checkout-btn">Checkout</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <!-- End Cart Section -->     
+            </div>              
         </div>
     </header>
     

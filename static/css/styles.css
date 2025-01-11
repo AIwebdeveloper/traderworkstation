@@ -220,25 +220,6 @@ footer .social-links li a:hover {
     text-decoration: underline;
 }
 
-/* Sign In/Sign Up Buttons Styling */
-/* Position the auth-links below the navigation */
-.auth-links {
-    margin-top: 10px; /* Adds spacing between the nav and auth-links */
-    text-align: right; /* Aligns the links to the right */
-}
-
-.auth-links a {
-    color: #fff; /* Matches navigation link color */
-    text-decoration: none;
-    font-size: 1rem;
-    margin-left: 15px; /* Adds space between Sign In and Sign Up */
-    transition: color 0.3s ease;
-}
-
-.auth-links a:hover {
-    color: #ffdc73; /* Matches hover color for navigation links */
-}
-
 
 /* Media Queries for Modals */
 @media (max-width: 768px) {
@@ -1223,12 +1204,35 @@ footer .social-links li a:hover {
 
 
 
-/* Cart Container Styling */
+/* Container for Auth Links and Cart */
+.auth-links-and-cart {
+    display: flex;
+    align-items: center; /* Aligns items vertically */
+    gap: 15px; /* Adds space between elements */
+}
+
+/* Auth Links Styling */
+.auth-links-container {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-links-container a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.auth-links-container a:hover {
+    color: #ffdc73; /* Matches navigation hover color */
+}
+
+/* Cart Container */
 .cart-container {
     position: relative;
     display: flex;
-    align-items: center;
-    margin-top: 5px;
+    align-items: center; /* Aligns icon and count vertically */
 }
 
 #cart-toggle-btn {
@@ -1239,12 +1243,12 @@ footer .social-links li a:hover {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 5px; /* Space between the icon and count */
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 #cart-toggle-btn:hover {
-    color: #ffdc73; /* Hover effect matches navigation links */
+    color: #ffdc73;
     transform: scale(1.1);
 }
 
@@ -1261,27 +1265,22 @@ footer .social-links li a:hover {
     text-align: center;
 }
 
-/* Dropdown Styling for Cart Content */
+/* Dropdown Styling */
 #cart-content {
     display: none;
     position: absolute;
-    top: 100%; /* Ensures it drops below the button */
+    top: 40px; /* Adjusted for alignment */
     right: 0;
     width: 300px;
-    background-color: #fff;
+    background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     z-index: 1000;
     padding: 15px;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    visibility: hidden;
-    opacity: 0;
 }
 
 .cart-container.open #cart-content {
     display: block;
-    visibility: visible;
-    opacity: 1;
 }
 
 #cart-content h3 {
@@ -1335,20 +1334,3 @@ footer .social-links li a:hover {
     background-color: #218838;
     transform: scale(1.05);
 }
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    #cart-content {
-        width: 90%; /* Adjusts dropdown width for smaller screens */
-    }
-}
-
-/* Show the cart dropdown on button click */
-.cart-container.open #cart-content {
-    display: block;
-}
-
-
-
-
-
