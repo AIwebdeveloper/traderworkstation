@@ -1207,8 +1207,11 @@ footer .social-links li a:hover {
 /* Container for Auth Links and Cart */
 .auth-links-and-cart {
     display: flex;
-    align-items: center; /* Aligns items vertically */
-    gap: 15px; /* Adds space between elements */
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    right: 11px;
+    bottom: 0;
 }
 
 /* Auth Links Styling */
