@@ -14,21 +14,23 @@
             <img src="{% static 'images/tws-logo.jpg' %}" alt="Trader WorkStation Logo">
             <span>Trader WorkStation</span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'products' %}">Products</a></li>
-                <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
-                <li><a href="{% url 'home' %}#news">News</a></li>
-                <li><a href="{% url 'home' %}#blog">Blog</a></li>
-                <li><a href="{% url 'chat_forum' %}">Chat Forum</a></li>
-                <li><a href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </nav>
-        <!-- Sign-In and Sign-Up Links -->
-        <div class="auth-links">
-            <a href="#" id="open-signin-modal">Sign In</a>
-            <a href="#" id="open-signup-modal">Sign Up</a>
+        <div class="nav-container">
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'products' %}">Products</a></li>
+                    <li><a href="{% url 'home' %}#portfolio">Portfolio</a></li>
+                    <li><a href="{% url 'home' %}#news">News</a></li>
+                    <li><a href="{% url 'home' %}#blog">Blog</a></li>
+                    <li><a href="{% url 'chat_forum' %}">Chat Forum</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Auth Links Section -->
+            <div class="auth-links-container">
+                <a href="#" id="open-signin-modal">Sign In</a>
+                <a href="#" id="open-signup-modal">Sign Up</a>
+            </div>
         </div>
     </header>
     
