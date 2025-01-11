@@ -1223,6 +1223,92 @@ footer .social-links li a:hover {
 
 
 
+/* Cart Container Styling */
+.cart-container {
+    position: relative;
+}
+
+#cart-toggle-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 5px;
+}
+
+#cart-toggle-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Cart Dropdown Styling */
+#cart-content {
+    display: none;
+    position: absolute;
+    top: 40px; /* Adjust to ensure it drops below the header */
+    right: 0;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 15px;
+}
+
+#cart-content h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#cart-items {
+    max-height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#cart-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#view-cart-btn,
+#checkout-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#view-cart-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+#view-cart-btn:hover {
+    background-color: #0056b3;
+}
+
+#checkout-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#checkout-btn:hover {
+    background-color: #218838;
+}
+
+/* Show the cart when the toggle button is clicked */
+.cart-container.open #cart-content {
+    display: block;
+}
 
 
 

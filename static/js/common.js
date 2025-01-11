@@ -78,3 +78,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cartToggleBtn = document.getElementById("cart-toggle-btn");
+    const cartContainer = document.querySelector(".cart-container");
+
+    cartToggleBtn.addEventListener("click", () => {
+        cartContainer.classList.toggle("open");
+    });
+});
+
