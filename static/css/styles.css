@@ -1226,43 +1226,68 @@ footer .social-links li a:hover {
 /* Cart Container Styling */
 .cart-container {
     position: relative;
-}
-
-#cart-toggle-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
     margin-top: 5px;
 }
 
+#cart-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
 #cart-toggle-btn:hover {
-    background-color: #0056b3;
+    color: #ffdc73; /* Hover effect matches navigation links */
     transform: scale(1.1);
 }
 
-/* Cart Dropdown Styling */
+#cart-count {
+    font-size: 0.9rem;
+    background: #007bff;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 5px;
+    min-width: 24px;
+    text-align: center;
+}
+
+/* Dropdown Styling for Cart Content */
 #cart-content {
     display: none;
     position: absolute;
-    top: 40px; /* Adjust to ensure it drops below the header */
+    top: 100%; /* Ensures it drops below the button */
     right: 0;
     width: 300px;
-    background-color: white;
+    background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     z-index: 1000;
     padding: 15px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cart-container.open #cart-content {
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 #cart-content h3 {
-    margin: 0 0 10px 0;
     font-size: 1.2rem;
     color: #333;
+    margin-bottom: 10px;
 }
 
 #cart-items {
@@ -1276,15 +1301,19 @@ footer .social-links li a:hover {
 #cart-footer {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
 #view-cart-btn,
 #checkout-btn {
+    flex: 1;
     padding: 8px 15px;
     font-size: 0.9rem;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
 }
 
 #view-cart-btn {
@@ -1294,6 +1323,7 @@ footer .social-links li a:hover {
 
 #view-cart-btn:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 #checkout-btn {
@@ -1303,12 +1333,21 @@ footer .social-links li a:hover {
 
 #checkout-btn:hover {
     background-color: #218838;
+    transform: scale(1.05);
 }
 
-/* Show the cart when the toggle button is clicked */
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #cart-content {
+        width: 90%; /* Adjusts dropdown width for smaller screens */
+    }
+}
+
+/* Show the cart dropdown on button click */
 .cart-container.open #cart-content {
     display: block;
 }
+
 
 
 
