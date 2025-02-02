@@ -10,6 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+# settings.py
+import os
+
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework',  # Add Django REST Framework
     'api',  # Your API app
     'core',  # Add the core app
+    'chatbot',
 ]
 
 MIDDLEWARE = [
